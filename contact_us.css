@@ -1,0 +1,221 @@
+body{
+	background-color:#FFFFFF;
+	background: transparent url(imgs/cursor.svg) space 0 0;
+}
+.header{
+		/*padding: 20px 0 20px 0;*/
+	top: 0px;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 5px 0px #707070;
+	position: fixed;
+	width: 98.5%;
+	padding-top: 20px;
+	user-select: none;
+	z-index: 10;
+	}
+	
+	.allmenu{
+    display: none;
+    background-color: #eba435;
+    border-radius: 10px;
+    min-width: 120px;
+    position: fixed;
+    z-index: 11;
+    margin-top: 45px; /*delete this if you want to make it floating on the header*/
+	opacity: 0.9;
+	cursor:url("imgs/cursor.svg"),default;
+	}
+	.allmenu a{
+    text-decoration: none;
+    font-size: 24px;
+    color:black;
+    text-shadow: 2px 0px 0px #e86944;
+    padding:1px 120px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	cursor:url("imgs/cursor.svg"),default;
+	-webkit-user-drag: none;
+	}
+	.allmenu a:hover{
+	background-color:#eb7135;
+	border-radius:10px;
+	cursor: url("imgs/favicon.svg"),auto;
+	
+	
+    }
+	.menubtnimg{
+	 transition:transform 0.4s ease;
+	}
+	.menubtnimg:hover{
+		cursor:url("imgs/cursor.svg"),default;
+		border:1px thin #000000;
+		transform: rotate(-360deg);
+	}
+
+	.menubtn:hover .allmenu{
+		display:block;
+		animation-name:menudrop;
+		animation-duration: 0.3s;        
+
+	}
+	.menubtn{
+    float: left;
+    padding-left: 10px;
+    z-index: 1;
+	position: relative;
+	top: 0px;
+	-webkit-user-drag: none;
+	}
+	.loginbtn{
+		position: relative;
+		float: right;
+		z-index: 1;
+		-webkit-user-drag: none;
+		user-drag:none;
+		top: 5px;
+		left:-20px;
+	}
+	.loginbtnimg{
+		transition: transform 0.4s ease;
+	}
+	.loginbtn:hover .loginbtnimg:hover{
+		transform: rotate(-360px);
+	}
+	.logo{
+	-webkit-user-drag: none;
+	user-drag:none;
+	user-select: none;
+	z-index: 1;
+	}
+	.logo:hover{
+		cursor:grab ;
+	}
+	
+	@keyframes menudrop{
+		0% {opacity: 0;}
+		100% {}
+	}
+
+input[type="text"],
+input[type="email"] {
+  font-size: 25px;
+  width: 600px;
+  height: 30px;
+  background-color: #eba435;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 12px;
+  transition: background-color 0.4s ease-in;
+   outline: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus, #bigtextbar:focus{
+	background-color:#Ebc835;
+}
+#bigtextbar{
+	font-size: 25px;
+  width: 600px;
+  height: 60px;
+  background-color: #eba435;
+  padding: 12px;
+  padding-bottom:60px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 12px;
+  transition: background-color 0.4s ease-in;
+   outline: none;
+   resize:none;
+   height: 70px;
+}
+
+.fform {
+  cursor:url("imgs/fedupcursor.svg"),auto;
+  margin-top: 140px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color:rgba(238, 238, 255,0.6);
+  transition: background-color 0.4s ease-in;
+  opacity:0.9;
+  margin-bottom:10px;
+}
+.fform:hover {
+	background-color:rgba(238, 238, 255,0.9);
+	opacity:1;
+}
+.us {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #eba435;
+  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+  text-shadow: 0px 1px 0px #eb7135;
+  font-size: 50px;
+  font-weight:700;
+  padding-bottom: 20px;
+  user-select:none;
+  cursor:url("imgs/fedupcursor.svg"),auto;
+}
+input[type="button"] {
+  font-size: 20px;
+  width: 320px;
+  height: 50px;
+  margin-left: 150px;
+  margin-right: auto;
+  background-color: #eb7135;
+  color: white;
+  border: 1px solid black;
+  border-radius: 12px;
+  transition:background-color 0.3s ease;
+  
+}
+
+input[type="button"]:hover {
+  background-color: #Dd6429;
+  cursor:url("imgs/fedupcursor.svg"),auto;
+}
+.formfooter{
+	font-size:20px;
+	text-align:center;
+	background-color:rgba(235, 113, 53,1);
+	text-shadow:2px 2px 0px  #eba435;
+	border-radius: 20px;
+	font-weight:bold;
+	font-family: sans-serif;
+	padding: 15px;
+	margin-top:0px;
+	width:98%;
+	margin-bottom:0px;
+	/*padding-bottom:10px;*/
+}
+.footer{
+		text-align:center;
+		background-color:#eba435;
+		text-shadow: 0px 2px 0px #eb7135; 
+		border-radius: 2px;
+		margin-top:0px;
+		
+	}
+	
+	#teamname{
+		text-shadow: 0px 2px 2px #Ebc835;
+		border-radius:10px;
+		animation-name: glow;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
+	#teamname:hover{
+		font-size: 24px;
+		background-color: rgba(235, 200, 53,0.4);
+		color:#eb7135;
+		text-shadow: 0px 2px 2px black;
+		animation-timing-function:linear;
+	}
+	@keyframes glow{
+		0% {text-shadow: 0px 0px 5px red;}
+		100%{text-shadow: 0px 0px 3px #eb7135;}
+	}

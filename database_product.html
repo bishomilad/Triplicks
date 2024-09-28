@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin | Triplick's</title>
+  <script>
+    var arr_food_name = JSON.parse(localStorage.getItem("arr_name_food"));
+    if (arr_food_name.length == 0) {
+      var arr_r = ["0"];
+      localStorage.setItem("arr_name_food", JSON.stringify(arr_r));
+      localStorage.setItem("arr_img_food", JSON.stringify(arr_r));
+    }
+    var arr_food_name = JSON.parse(localStorage.getItem("arr_name_food"));
+    var arr_food_img = JSON.parse(localStorage.getItem("arr_img_food"));
+
+    function fill() {
+      for (var i = 0; i < arr_food_name.length; i++) {
+
+        // loop to create this elements
+        /*
+              <label for="url">1- url: </label>
+              <label for="text">Meal name: </label>
+              <input name="text" type="text" class="tex_b">
+              <input type="button" value="Review" class="review" id="0" onclick="review(this.id)">
+              <input type="button" value="Delete" class="del" id="0" onclick="del(this.id)">
+              <input type="button" value="Update" class="update" id="0" onclick="update(this.id)">
+              <br>
+        */
+        var pa = document.getElementById("ta");
+
+        var lab_1 = document.createElement("label");
+        var lab_2 = document.createElement("label");
+
+        lab_1.setAttribute("for", "url");
+        lab_1.innerText = (i + 1) + "-" + " url: ";
+
+        lab_2.setAttribute("for", "text");
+        lab_2.innerText = "Meal name: ";
+
+        var tex_1 = document.createElement("input");
+        var tex_2 = document.createElement("input");
+
+        tex_1.setAttribute("name", "url");
+        tex_1.value = arr_food_img[i];
+        tex_1.type = "text";
+        tex_1.className = "tex_b"
+
+        tex_2.setAttribute("name", "text");
+        tex_2.value = arr_food_name[i];
+        tex_2.type = "text";
+        tex_2.className = "tex_b"
+
+        var bu_de = document.createElement("input");
+        bu_de.type = "button";
+        bu_de.value = "Delete";
+        bu_de.className = "del";
+        bu_de.id = i;
+        bu_de.setAttribute("onClick", "del(this.id)");
+
+        var bu_update = document.createElement("input");
+        bu_update.type = "button";
+        bu_update.value = "Update";
+        bu_update.className = "update";
+        bu_update.id = i;
+        bu_update.setAttribute("onClick", "update(this.id)");
+
+        var bu_bu_review = document.createElement("input");
+        bu_bu_review.type = "button";
+        bu_bu_review.value = "Review";
+        bu_bu_review.className = "review";
+        bu_bu_review.id = i;
+        bu_bu_review.setAttribute("onClick", "review(this.id)");
+
+
+        pa.appendChild(lab_1);
+        pa.appendChild(tex_1);
+        pa.appendChild(lab_2);
+        pa.appendChild(tex_2);
+        pa.appendChild(bu_bu_review);
+        pa.appendChild(bu_de);
+        pa.appendChild(bu_update);
+        pa.appendChild(document.createElement("br"));
+
+      }
+      //after loop add (add button);
+      var add_new = document.createElement("input");
+      add_new.type = "button";
+      add_new.value = "Add ";
+      add_new.className = "add";
+      add_new.setAttribute("onClick", "add()");
+
+      var div_add = document.createElement("div");
+      div_add.className = "di_add";
+      div_add.appendChild(add_new);
+      pa.appendChild(div_add);
+
+    }
+
+    function del(_id) {
+
+      //string to integer
+      var _index = parseInt(_id);
+
+      //delete element from array
+      arr_food_name.splice(_index, 1);
+      arr_food_img.splice(_index, 1);
+      // save array after delete element in localstorage
+      localStorage.setItem("arr_name_food", JSON.stringify(arr_food_name));
+      localStorage.setItem("arr_img_food", JSON.stringify(arr_food_img));
+      location.reload();
+
+    }
+
+
+    function update(_id) {
+
+       //string to integer
+      var _index = parseInt(_id);
+
+      //select new value from text box 
+      arr_food_img[_index] = document.getElementsByClassName("tex_b")[(_index * 2) + 0].value;
+      arr_food_name[_index] = document.getElementsByClassName("tex_b")[(_index * 2) + 1].value;
+
+      //save array after update in localstorage
+      localStorage.setItem("arr_name_food", JSON.stringify(arr_food_name));
+      localStorage.setItem("arr_img_food", JSON.stringify(arr_food_img));
+
+      location.reload();
+    }
+
+    function review(_id) {
+
+      //delete old image 
+      document.getElementsByClassName("iimg")[0].innerHTML = "";
+
+      var _index = parseInt(_id);
+      var pa_img = document.createElement("img");
+      pa_img.src = arr_food_img[_index];
+      pa_img.className = "pa_img";
+      document.getElementsByClassName("iimg")[0].appendChild(pa_img);
+    }
+
+    function add() {
+
+      //push new value in array and save
+      arr_food_name.push("0");
+      arr_food_img.push("0");
+
+      //save array 
+      localStorage.setItem("arr_name_food", JSON.stringify(arr_food_name));
+      localStorage.setItem("arr_img_food", JSON.stringify(arr_food_img));
+
+      location.reload();
+    }
+  </script>
+
+  <link rel="stylesheet" href="database_product.css">
+  <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+
+</head>
+
+<body onload="fill()">
+
+  <header>
+    <div class="header">
+      <img src="imgs/logo.svg" alt="Logo was here" class="logo" width="300px">
+      <div class="menubtn">
+        <img src="imgs/menubtn.svg" class="menubtnimg menubtn" alt="Menu Button" width="70px" height="70px" />
+        <br>
+        <nav>
+          <div class="allmenu"><br>
+            <a href="Home.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="main.html">Offers</a><br>
+            <a href="contact_us.html">Contact Us</a><br> <br>
+          </div>
+        </nav>
+      </div> <a href="login.html" class="loginbtn"><img src="imgs/Loginbtn.svg" alt="Login Button" width="70px"
+          height="70px" class="loginbtnimg" /></a>
+    </div>
+  </header>
+
+  <div class="header2">
+
+    <div class="_in">
+      Products Data Management
+
+    </div>
+    <div class="_out">
+      <a href="database_user.html"> Customer Data Management </a>
+    </div>
+
+
+
+
+    <div>
+    </div>
+  </div>
+
+  <div class="iimg">
+  </div>
+  <div id="ta">
+    <!--
+          <label for="url">1- url: </label>
+          <label for="text">Meal name: </label>
+          <input name="text" type="text" class="tex_b">
+          <input type="button" value="Review" class="review" id="0" onclick="review(this.id)">
+          <input type="button" value="Delete" class="del" id="0" onclick="del(this.id)">
+          <input type="button" value="Update" class="update" id="0" onclick="update(this.id)">
+          <br>
+    -->
+  </div>
+
+  <footer class="footer">
+    <h3>This website is developed by <span id="teamname">Triple Tags</span> team</h3>
+  </footer>
+</body>
+
+</html>

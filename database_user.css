@@ -1,0 +1,244 @@
+body {
+  line-height: 50px;
+  background-color: #D1D9E1;
+  
+}
+.header{
+		/*padding: 20px 0 20px 0;*/
+	top: 0px;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 5px 0px #707070;
+	position: fixed;
+	width: 98.5%;
+	padding-top: 20px;
+	user-select: none;
+	z-index: 10;
+	}
+	
+	.allmenu{
+    display: none;
+    background-color: #eba435;
+    border-radius: 10px;
+    min-width: 120px;
+    position: fixed;
+    z-index: 50;
+    margin-top: 20px; /*delete this if you want to make it floating on the header*/
+	opacity: 0.9;
+	cursor:url("imgs/cursor.svg"),default;
+	}
+	.allmenu a{
+    text-decoration: none;
+    font-size: 24px;
+    color:black;
+    text-shadow: 2px 0px 0px #e86944;
+    padding:1px 120px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	cursor:url("imgs/cursor.svg"),default;
+	-webkit-user-drag: none;
+	}
+	.allmenu a:hover{
+	background-color:#eb7135;
+	border-radius:10px;
+	cursor: url("imgs/favicon.svg"),auto;
+	
+	
+    }
+	.menubtnimg{
+	 transition:transform 0.4s ease;
+	}
+	.menubtnimg:hover{
+		cursor:url("imgs/cursor.svg"),default;
+		border:1px thin #000000;
+		transform: rotate(-360deg);
+	}
+
+	.menubtn:hover .allmenu{
+		display:block;
+		animation-name:menudrop;
+		animation-duration: 0.3s;        
+
+	}
+	.menubtn{
+    float: left;
+    padding-left: 10px;
+    z-index: 1;
+	position: relative;
+	top: 0px;
+	-webkit-user-drag: none;
+	}
+	.loginbtn{
+		position: relative;
+		float: right;
+		z-index: 1;
+		-webkit-user-drag: none;
+		user-drag:none;
+		top: 5px;
+		left:-20px;
+	}
+	.loginbtnimg{
+		transition: transform 0.4s ease;
+	}
+	.loginbtn:hover .loginbtnimg{
+		transform: rotate(-360px);
+	}
+	.logo{
+	-webkit-user-drag: none;
+	user-drag:none;
+	user-select: none;
+	z-index: 1;
+	}
+	.logo:hover{
+		cursor:grab ;
+	}
+	
+	@keyframes menudrop{
+		0% {opacity: 0;}
+		100% {}
+	}
+	
+.header2 {
+	margin-top:150px;
+  border: black 1.5px solid;
+  border-radius: 10px;
+  height: 100px;
+  background-color:rgba(238, 238, 255,0.6);
+		transition:background-color 0.4s ease;
+}
+.header2:hover {
+background-color:rgba(238, 238, 255,0.9);
+}
+
+/*.header2 .logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 15px;
+  margin-bottom: auto;
+  margin-top: auto;
+}*/
+
+.header2 ._out{
+    color: black;
+  width: fit-content;
+  margin:20px;
+  display: inline;
+  top:20px;
+ 
+}
+._out a{
+    color: black;
+    font-size: 20px;
+    padding: 15px;
+     background-color: #eb7135;
+    border-radius: 20px;
+	 text-decoration:none;
+	 transition:background-color 0.3s ease;
+	 user-select:none;
+	 
+}
+._in
+{
+    width: fit-content;
+    display: inline;
+    color: black;
+    padding: 16px;
+    font-size: 20px;
+    background-color:#Ebc835;
+    border-radius: 20px;
+	user-select:none;
+	position:relative;
+	top:20px;
+	
+
+}
+._out{
+	position:relative;
+	margin-top:20px;
+}
+._out a:hover{
+	background-color: #Dd6429;
+}
+
+.del {
+  width: 110px;
+  margin-left: 20px;
+  background-color: #eb7135;
+  color: black;
+  border-radius:20px;
+  transition:background-color 0.3s ease;
+}
+.del:hover {
+	background-color: #Dd6429;
+}
+
+.update {
+  width: 110px;
+  margin-left: 20px;
+  background-color: #Ebc835;
+  color: black;
+  border-radius:20px;
+  transition:background-color 0.3s ease;
+}
+.update:hover {
+	background-color:#D3B42F;
+}
+
+label {
+  color: black;
+  padding-left: 20px;
+  font-size: 20px;
+  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+  user-select:none;
+}
+
+#ta {
+  margin-top: 20px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  border: 1.5px black solid;
+  border-radius: 10px;
+  background-color:rgba(238, 238, 255,0.6);
+  transition:background-color 0.4s ease;
+}
+#ta:hover{
+	background-color:rgba(248, 248, 255,0.9);
+}
+input[type="text"] {
+  background-color: #Ebc835;
+  color: black;
+  font-size: 15px;
+  width: 200px;
+  outline:none;
+}
+.footer{
+	    position:relative;
+		text-align:center;
+		background-color:#eba435;
+		text-shadow: 0px 2px 0px #eb7135; 
+		border-radius: 2px;
+		top:130px;
+		
+	}
+	
+	#teamname{
+		text-shadow: 0px 2px 2px #Ebc835;
+		border-radius:10px;
+		animation-name: glow;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
+	#teamname:hover{
+		font-size: 24px;
+		background-color: rgba(235, 200, 53,0.4);
+		color:#eb7135;
+		text-shadow: 0px 2px 2px black;
+		animation-timing-function:linear;
+	}
+	@keyframes glow{
+		0% {text-shadow: 0px 0px 5px red;}
+		100%{text-shadow: 0px 0px 3px #eb7135;}
+	}
+

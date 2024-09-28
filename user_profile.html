@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Account settings | Triplick's</title>
+    <meta charset="utd-8">
+    <meta name="discription" content="Account settings">
+    <link rel="stylesheet" href="user_profile.css">
+	<link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+    <script>
+        function user() {
+            {
+                if (localStorage.getItem("now_user"))
+                    document.getElementById("user_name").innerText = "Hello " + (localStorage.getItem("now_user").charAt(0).toUpperCase()) + (localStorage.getItem("now_user").substring(1));
+            }
+            //import data user in this moment from localstorage 
+            document.forms["modify"]["username"].value = localStorage.getItem("now_user");
+            document.forms["modify"]["email"].value = localStorage.getItem("now_email");
+            document.forms["modify"]["phone"].value = localStorage.getItem("now_phone");
+            document.forms["modify"]["password"].value = localStorage.getItem("now_pass");
+        }
+        
+        function up_password() {
+            var v_user = JSON.parse(localStorage.getItem("arr_name"));
+            var pos_user = v_user.indexOf(document.forms["modify"]["username"].value);
+            var new_pass = document.forms["modify"]["modify_password"].value;
+            var v_pass = JSON.parse(localStorage.getItem("arr_pass"));
+            v_pass[pos_user]=new_pass;
+            localStorage.setItem("arr_pass", JSON.stringify(v_pass));
+            localStorage.setItem("now_pass",new_pass);
+            location.reload();
+
+        }
+    </script>
+</head>
+
+<body onload="user()">
+    <header> 
+<div class="header">
+<img src="imgs/logo.svg" alt="Logo was here" class="logo" width="300px">
+	<div class="menubtn"> 
+	  <img src="imgs/menubtn.svg" class="menubtnimg menubtn" alt="Menu Button" width="70px" height="70px"/> 
+		<br>
+		<nav>
+	<div class="allmenu"><br>
+      <a href="Home.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="main.html">Offers</a><br>
+	  <a href="contact_us.html">Contact Us</a><br> <br>
+		   </div> </nav> </div> <a  href="main.html" class="loginbtn"><img src="imgs/backtoorderbtn.svg"  alt="back button" width="70px" height="70px" class="loginbtnimg"/></a> </div>
+</header> 
+<div id="user_name"></div>
+    <div class="edit">
+        <form name="modify" method="POST">
+            <div class="p_User_Profile">User Profile</div>
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" required disabled><br>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" required disabled><br>
+            <label for="phone">Phone number:</label><br>
+            <input type="number" name="phone" required disabled><br>
+            <label for="password">Password:</label><br>
+            <input type="text" name="password" required disabled><br>
+            <label for="password">New Password:</label><br>
+            <input type="text" minlength="10" name="modify_password" required id="newpass"><br><br>
+            <input type="submit" value="Save" onclick="up_password()">
+        </form>
+        <p>
+
+        </p>
+
+    </div>
+	<footer class="footer"><h3>This website is developed by <span id="teamname">Triple Tags</span> team</h3></footer>
+</body>
+
+</html>

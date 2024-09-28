@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign up | Triplick's</title>
+  <meta charset="utd-8">
+  <meta name="discription" content="Sign up now to get the best offers!">
+  <link rel="stylesheet" href="registration.css">
+  <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+
+  <script>
+    function regist() {
+
+      var emp_arr = [];
+
+      //import values from form
+      var name = document.forms["registration"]["username"].value;
+      var email = document.forms["registration"]["email"].value;
+      var phone = document.forms["registration"]["phone"].value;
+      var password = document.forms["registration"]["password"].value;
+
+     //if localstorage is empty add empty array
+      if (!localStorage.getItem("arr_name")) {
+
+        localStorage.setItem("arr_name", JSON.stringify(emp_arr));
+      }
+      if (!localStorage.getItem("arr_pass")) {
+
+        localStorage.setItem("arr_pass", JSON.stringify(emp_arr));
+      }
+      if (!localStorage.getItem("arr_mail")) {
+        localStorage.setItem("arr_mail", JSON.stringify(emp_arr));
+      }
+      if (!localStorage.getItem("arr_phone")) {
+        localStorage.setItem("arr_phone", JSON.stringify(emp_arr));
+      }
+
+      //import localstorage to array
+      var v_arr_name = JSON.parse(localStorage.getItem("arr_name"));
+      var v_arr_pass = JSON.parse(localStorage.getItem("arr_pass"));
+      var v_arr_mail = JSON.parse(localStorage.getItem("arr_mail"));
+      var v_arr_phone = JSON.parse(localStorage.getItem("arr_phone"));
+
+      //if position username in array exist or not equal "admin"
+      if (v_arr_name.indexOf(name) != -1 || name == "admin") {
+        alert("Username Already Taken");
+        document.forms[registration].reset;
+      }
+
+      else {
+        //push user data in array 
+        v_arr_name.push(name);
+        v_arr_pass.push(password);
+        v_arr_mail.push(email);
+        v_arr_phone.push(phone);
+ 
+        //save array in localstorage after pushdata
+        localStorage.setItem("arr_name", JSON.stringify(v_arr_name));
+        localStorage.setItem("arr_pass", JSON.stringify(v_arr_pass));
+        localStorage.setItem("arr_mail", JSON.stringify(v_arr_mail));
+        localStorage.setItem("arr_phone", JSON.stringify(v_arr_phone));
+
+        localStorage.setItem("now_user", name);
+        localStorage.setItem("now_pass", password);
+        localStorage.setItem("now_email", email);
+        localStorage.setItem("now_phone", phone);
+
+        document.getElementsByName("registration")[0].setAttribute("action", "main.html");
+      }
+    }
+  </script>
+</head>
+
+
+<body>
+
+  <header>
+    <div class="header">
+      <img src="imgs/logo.svg" alt="Logo was here" class="logo" width="300px">
+      <div class="menubtn">
+        <img src="imgs/menubtn.svg" class="menubtnimg menubtn" alt="Menu Button" width="70px" height="70px" />
+        <br>
+        <nav>
+          <div class="allmenu"><br>
+            <a href="Home.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="main.html">Offers</a><br>
+            <a href="contact_us.html">Contact Us</a><br> <br>
+          </div>
+        </nav>
+      </div> <a href="login.html" class="loginbtn"><img src="imgs/Loginbtn.svg" alt="Login Button" width="70px"
+          height="70px" class="loginbtnimg" /></a>
+    </div>
+  </header>
+  <div class="registration">
+    <div class="fform">
+      <p class="p_signup">
+        Sign up
+      </p>
+      <form name="registration" method="POST" onsubmit="regist()" autocomplete="off">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" required placeholder="Your username" autofocus><br>
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" required placeholder="Your email"><br>
+        <label for="phone">Phone number:</label><br>
+        <input type="number" name="phone" required placeholder="Your phone number"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" minlength="10" name="password" required
+          placeholder="Must be at least 10 characters"><br><br>
+        <input type="submit" value="Sign up">
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <h3>This website is developed by <span id="teamname">Triple Tags</span> team</h3>
+  </footer>
+
+
+</body>
+
+
+
+</html>

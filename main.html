@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Order | Triplick's</title>
+  <meta charset="utd-8">
+  <meta name="discription" content="Order from here">
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+
+  <script>
+    function user() {
+      if (localStorage.getItem("now_user"))
+        document.getElementById("user_name").innerText = "Hello " + (localStorage.getItem("now_user").charAt(0).toUpperCase()) + (localStorage.getItem("now_user").substring(1));
+    }
+    function logout() { 
+      localStorage.removeItem("now_user");
+      localStorage.removeItem("now_pass");
+      localStorage.removeItem("now_email");
+      localStorage.removeItem("now_phone");
+
+    }
+    function fill() {
+
+      //default array
+      var arr_img_s = ["food/Dipping Box.png"
+        , "food/Eg-Filt-Mnstr-sndw.png"
+        , "food/Eg-Mnstr-box.png",
+        "food/Eg-Mnstr-cmbo.png",
+        "food/KFC_W5_EGYPT_KV8_BIG FILLER BOX 300x300px.png",
+        "food/SUPER DINNER Strips 400x400 pix.png",
+        "food/SUPER-DINNER_.png",
+        "food/Supreme Box.png",
+        "food/SUPREME-COMBO.png",
+        "food/TWISTER.png"
+      ];
+      var arr_img_pp = ["Dipping Box",
+        "Fillet monster sandwich",
+        "Monster box",
+        "Monster combo",
+        "Big filler box",
+        "Super dinner strips",
+        "Super dinner",
+        "Supreme box",
+        "Supreme combo",
+        "Twister"
+      ];
+
+      //if localstorage is empty add default array
+      if (!localStorage.getItem("arr_name_food")) {
+        localStorage.setItem("arr_name_food", JSON.stringify(arr_img_pp));
+      }
+      if (!localStorage.getItem("arr_img_food")) {
+        localStorage.setItem("arr_img_food", JSON.stringify(arr_img_s));
+      }
+
+      //import localstorage to array
+      var arr_food_name = JSON.parse(localStorage.getItem("arr_name_food"));
+      var arr_food_img = JSON.parse(localStorage.getItem("arr_img_food"));
+
+      for (var i = 0; i < arr_food_name.length; i++) {
+
+        //loop to make this
+
+     /*<div class="content">
+        <img class="img_s" src="food/Dipping Box.png" alt="">
+        <a href=""> <img class="add_to_cart" src="imgs/add-to-cart.png" alt=""></a>
+        <span class="pp">
+          Dipping Box
+        </span>
+      </div>*/
+        var pa = document.getElementsByClassName("main");
+        var new_content = document.createElement("div");
+        var new_img_s = document.createElement("img");
+        var new_add_to_cart_a = document.createElement("a");
+        var new_add_to_cart_img = document.createElement("img");
+        var new_pp_span = document.createElement("span");
+
+        new_add_to_cart_img.className = "add_to_cart";
+        new_add_to_cart_img.src = "imgs/add-to-cart.png";
+        new_add_to_cart_a.href = "";
+        new_content.className = "content";
+        new_img_s.className = "img_s";
+        new_pp_span.className = "pp";
+
+
+        new_pp_span.innerText = arr_food_name[i];
+        new_img_s.src = arr_food_img[i];
+        new_content.appendChild(new_img_s);
+        new_add_to_cart_a.appendChild(new_add_to_cart_img);
+        new_content.appendChild(new_add_to_cart_a);
+        new_content.appendChild(new_pp_span);
+        pa[0].appendChild(new_content);
+
+      }
+    }
+
+
+
+  </script>
+</head>
+
+<body onload="user() ,fill()">
+
+  <header>
+    <div class="header">
+      <img src="imgs/logo.svg" alt="Logo was here" class="logo" width="300px">
+      <div class="menubtn">
+        <img src="imgs/menubtn.svg" class="menubtnimg menubtn" alt="Menu Button" width="70px" height="70px" />
+        <br>
+        <nav>
+          <div class="allmenu"><br>
+            <a href="Home.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="main.html">Offers</a><br>
+            <a href="contact_us.html">Contact Us</a><br> <br>
+          </div>
+        </nav>
+      </div> <a href="user_profile.html" class="loginbtn"><img src="imgs/profilebtn.svg" alt="Login Button" width="70px"
+          height="70px" class="loginbtnimg" /></a>
+    </div>
+  </header>
+  <div id="user_name"></div>
+  <aside class="L_side">
+    <ul>
+      <li>
+        <a onclick="logout()" href="login.html"><img src="imgs/loginbtn.svg" alt="">Logout</a>
+      </li>
+  </aside>
+
+  <div class="main">
+    <!--<div class="content">
+      <img class="img_s" src="food/Dipping Box.png" alt="">
+      <a href=""> <img class="add_to_cart" src="imgs/add-to-cart.png" alt=""></a>
+      <span class="pp">
+        Dipping Box
+      </span>
+    </div>-->
+
+  </div>
+  <footer class="footer">
+    <h3>This website is developed by <span id="teamname">Triple Tags</span> team</h3>
+  </footer>
+
+</body>
+
+</html>

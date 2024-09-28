@@ -1,0 +1,269 @@
+hr {
+	border-width: 1px;
+	margin: 0px;
+}
+
+body {
+	height: fit-content;
+	background: transparent url("imgs/cursor.svg") space 0 0;
+	background-repeat: repeat;
+}
+.header {
+	/*padding: 20px 0 20px 0;*/
+	top: 0px;
+	background-color: white;
+	text-align: center;
+	-webkit-box-shadow: 2px 2px 5px 0px #707070;
+	position: fixed;
+	width: 98.5%;
+	padding-top: 20px;
+	user-select: none;
+	z-index: 10;
+}
+
+.allmenu {
+	display: none;
+	background-color: #eba435;
+	border-radius: 10px;
+	min-width: 120px;
+	position: fixed;
+	z-index: 11;
+	margin-top: 45px; /*delete this if you want to make it floating on the header*/
+	opacity: 0.9;
+	cursor: url("imgs/cursor.svg"), default;
+}
+.allmenu a {
+	text-decoration: none;
+	font-size: 24px;
+	color: black;
+	text-shadow: 2px 0px 0px #e86944;
+	padding: 1px 120px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	cursor: url("imgs/cursor.svg"), default;
+	-webkit-user-drag: none;
+}
+.allmenu a:hover {
+	background-color: #eb7135;
+	border-radius: 10px;
+	cursor: url("imgs/favicon.svg"), auto;
+}
+.menubtnimg {
+	transition: transform 0.4s ease;
+}
+.menubtnimg:hover {
+	cursor: url("imgs/cursor.svg"), default;
+	border: 1px thin #000000;
+	transform: rotate(-360deg);
+}
+
+.menubtn:hover .allmenu {
+	display: block;
+	animation-name: menudrop;
+	animation-duration: 0.3s;
+}
+.menubtn {
+	float: left;
+	padding-left: 10px;
+	z-index: 1;
+	position: relative;
+	top: 0px;
+	-webkit-user-drag: none;
+}
+.loginbtn {
+	position: relative;
+	float: right;
+	z-index: 1;
+	-webkit-user-drag: none;
+	user-drag: none;
+	top: 5px;
+	left: -20px;
+}
+.loginbtnimg {
+	transition: transform 0.4s ease;
+}
+.loginbtn:hover .loginbtnimg:hover {
+	transform: rotate(-360deg);
+}
+.logo {
+	-webkit-user-drag: none;
+	user-drag: none;
+	user-select: none;
+	z-index: 1;
+}
+.logo:hover {
+	cursor: grab;
+}
+
+@keyframes menudrop {
+	0% {
+		opacity: 0;
+	}
+	100% {
+	}
+}
+
+.fform {
+	position: absolute;
+	margin-top: 70px;
+	animation-name: menudrop;
+	animation-duration: 0.6s;
+	padding: 20px;
+	background-color: rgba(238, 238, 255, 0.6);
+	transition: background-color 0.4s ease;
+	opacity: 0.9;
+	border-radius: 25px;
+	margin-right: 500px;
+	left: 300px;
+}
+.fform:hover {
+	background-color: rgba(238, 238, 255, 0.9);
+	opacity: 1;
+}
+/*.login {
+	position: relative;
+	/*margin-top: 150px;
+  }*/
+
+#guard {
+	text-align: center;
+	font-size: 15px;
+	z-index: 20;
+	border-radius: 40px;
+	background-color: white;
+	position: relative;
+	top: 550px;
+	width: 500px;
+	left: 420px;
+	opacity: 0.7;
+	transition: opacity 0.2s ease;
+	user-select: none;
+}
+#guard:hover {
+	opacity: 1;
+}
+label,
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="button"] {
+	width: 700px;
+	height: 50px;
+	font-size: 25px;
+	color: white;
+	border-radius: 12px;
+	outline: none;
+}
+input[type="text"],
+input[type="password"] {
+	color: black;
+	margin-bottom: 10px;
+	background-color: #eba435;
+	transition: background-color 0.4s ease-in;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+	background-color: #ebc835;
+}
+
+input[type="submit"],
+input[type="button"] {
+	position: relative;
+	background-color: #eb7135;
+	margin-top: 20px;
+	cursor: pointer;
+	left: 1px;
+	transition: background-color 0.3s ease;
+}
+input[type="submit"] {
+	width: 300px;
+	left: 200px;
+}
+input[type="button"] {
+	width: 600px;
+	left: 50px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover {
+	background-color: #dd6429;
+}
+
+.p_signin {
+	position: relative;
+	text-align: center;
+	color: black;
+	text-shadow: 1px 1px 0px #eb7135;
+	font-size: 30px;
+	width: 15%;
+	border: black 2px solid;
+	background-color: rgba(235, 164, 53, 0.781);
+	border-radius: 10%;
+	left: 300px;
+	transition: background-color 0.4s ease-in;
+	user-select: none;
+}
+.p_signin:hover {
+	background-color: rgba(235, 113, 53, 0.781);
+}
+
+.gif2 {
+	text-align: center;
+	display: inline-block;
+	position: absolute;
+	left: 580px;
+	z-index: -1;
+	float: none;
+	left: 220px;
+	border-bottom: 1px solid black;
+}
+
+/*.edit {
+	height: 700px;
+	background-color: rgba(255, 255, 255, 0.178);
+	border: 3px white solid;
+	border-radius: 20px;
+	margin-top: 20px;
+  }*/
+/*.create_account {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	color: beige;
+	font-size: 30px;
+  }*/
+.footer {
+	text-align: center;
+	background-color: #eba435;
+	text-shadow: 0px 2px 0px #eb7135;
+	border-radius: 2px;
+	position: relative;
+	z-index: 1;
+	vertical-align: end;
+	top: 650px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#teamname {
+	text-shadow: 0px 2px 2px #ebc835;
+	border-radius: 10px;
+	animation-name: glow;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+#teamname:hover {
+	font-size: 24px;
+	background-color: rgba(235, 200, 53, 0.4);
+	color: #eb7135;
+	text-shadow: 0px 2px 2px black;
+	animation-timing-function: linear;
+}
+@keyframes glow {
+	0% {
+		text-shadow: 0px 0px 5px red;
+	}
+	100% {
+		text-shadow: 0px 0px 3px #eb7135;
+	}
+}

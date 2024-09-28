@@ -1,0 +1,262 @@
+hr {
+  border-width: 1px;
+  margin: 0px;
+}
+
+body {
+  background-color: #Fdfcfa;
+  height: fit-content;
+}
+.header{
+		/*padding: 20px 0 20px 0;*/
+	top: 0px;
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 5px 0px #707070;
+	position: fixed;
+	width: 98.5%;
+	padding-top: 20px;
+	user-select: none;
+	z-index: 10;
+	}
+	
+	.allmenu{
+    display: none;
+    background-color: #eba435;
+    border-radius: 10px;
+    min-width: 120px;
+    position: fixed;
+    z-index: 11;
+    margin-top: 45px; /*delete this if you want to make it floating on the header*/
+	opacity: 0.9;
+	cursor:url("imgs/cursor.svg"),default;
+	}
+	.allmenu a{
+    text-decoration: none;
+    font-size: 24px;
+    color:black;
+    text-shadow: 2px 0px 0px #e86944;
+    padding:1px 120px;
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	cursor:url("imgs/cursor.svg"),default;
+	-webkit-user-drag: none;
+	}
+	.allmenu a:hover{
+	background-color:#eb7135;
+	border-radius:10px;
+	cursor: url("imgs/favicon.svg"),auto;
+	
+	
+    }
+	.menubtnimg{
+	 transition:transform 0.4s ease;
+	}
+	.menubtnimg:hover{
+		cursor:url("imgs/cursor.svg"),default;
+		border:1px thin #000000;
+		transform: rotate(-360deg);
+	}
+
+	.menubtn:hover .allmenu{
+		display:block;
+		animation-name:menudrop;
+		animation-duration: 0.3s;        
+
+	}
+	.menubtn{
+    float: left;
+    padding-left: 10px;
+    z-index: 1;
+	position: relative;
+	top: 0px;
+	-webkit-user-drag: none;
+	}
+	.loginbtn{
+		position: relative;
+		float: right;
+		z-index: 1;
+		-webkit-user-drag: none;
+		user-drag:none;
+		top: 5px;
+		left:-20px;
+	}
+	.loginbtnimg{
+		transition: transform 0.4s ease;
+	}
+	.loginbtn:hover .loginbtnimg{
+		transform: rotate(-360px);
+	}
+	.logo{
+	-webkit-user-drag: none;
+	user-drag:none;
+	user-select: none;
+	z-index: 1;
+	}
+	.logo:hover{
+		cursor:grab ;
+	}
+	
+	@keyframes menudrop{
+		0% {opacity: 0;}
+		100% {}
+	}
+	
+
+.L_side {
+  margin-top: 200px;
+  position: fixed;
+  height: auto;
+  width: 220px;
+  color: black;
+  border: black 3px solid;
+  border-radius: 50px;
+  z-index:5;
+  background-color:white;
+}
+
+.L_side ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 50px;
+}
+
+.L_side a {
+  margin-left: 10px;
+  font-size: 28px;
+  color: black;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.L_side img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  top: 12px;
+  border-radius: 10px;
+}
+
+.L_side a:hover{
+  text-shadow:0px 0px 2px grey;
+  opacity:0.7;
+}
+
+.main {
+  width: 662px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.content {
+  width: 650px;
+  height: 230px;
+  border: black 3px;
+  border-style: ridge;
+  border-radius: 20px;
+  margin: 5px;
+  position: relative;
+  user-drag:none;
+
+}
+
+
+
+.content .img_s {
+  background-color: rgba(255, 255, 255, 0.151);
+  float: left;
+  width: 405px;
+  height: 230px;
+  overflow: auto;
+  border-right: black 2px solid;
+  
+}
+
+.content .add_to_cart {
+  background-color: #eb7135;
+  border: 2px solid black;
+  border-radius: 10%;
+  width: 60px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition:background-color 0.3s ease;
+}
+.content .add_to_cart:hover {
+  background-color: #Dd6429;
+}
+
+.main .pp {
+  /*text-align: center;*/
+  color: black;
+  margin-left: 0px;
+  /*width: 225px;*/
+  display:block;
+  margin-top:102px;
+  height: fit-content;
+  font-size: 30px;
+  overflow: auto;
+  user-select:none;
+  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+ 
+}
+
+#user_name {
+  width: fit-content;
+  padding-left: 100px;
+  padding-right: 100px;
+  color: black;
+  font-size: 30px;
+  background-color: rgba(235, 164, 53, 0.781);
+  transition:background-color 0.4s ease-in;
+  border: 2px solid black;
+  border-radius:20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:150px;
+  user-select:none;
+  opacity:0.89;
+  font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+#user_name:hover{
+	background-color: rgba(235, 113, 53, 0.781);
+}
+/*#user_name
+{
+  color: black;
+  display: inline;
+  font-size: 40px;
+  margin-left: 150px;
+
+}*/
+.footer{
+		text-align:center;
+		background-color:#eba435;
+		text-shadow: 0px 2px 0px #eb7135; 
+		border-radius: 2px;
+		margin-top:50px;
+		
+	}
+	
+	#teamname{
+		text-shadow: 0px 2px 2px #Ebc835;
+		border-radius:10px;
+		animation-name: glow;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
+	#teamname:hover{
+		font-size: 24px;
+		background-color: rgba(235, 200, 53,0.4);
+		color:#eb7135;
+		text-shadow: 0px 2px 2px black;
+		animation-timing-function:linear;
+	}
+	@keyframes glow{
+		0% {text-shadow: 0px 0px 5px red;}
+		100%{text-shadow: 0px 0px 3px #eb7135;}
+	}

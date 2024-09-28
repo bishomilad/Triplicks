@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login | Triplick's</title>
+  <meta charset="utd-8">
+  <meta name="discription" content="Login">
+  <link rel="stylesheet" href="login.css">
+  <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+
+  <script>
+     //import user data localstorage to array
+    var v_user = JSON.parse(localStorage.getItem("arr_name"));
+    var v_pass = JSON.parse(localStorage.getItem("arr_pass"));
+    var v_mail = JSON.parse(localStorage.getItem("arr_mail"));
+    var v_phone = JSON.parse(localStorage.getItem("arr_phone"));
+
+    function f_log() {
+
+      //import values from form
+      var user_now = document.forms["log"]["username"].value;
+      var pass_now = document.forms["log"]["password"].value;
+
+      if (user_now == "admin" && pass_now == "12345678910") {
+        localStorage.setItem("now_user", user_now);
+        localStorage.setItem("now_pass", pass_now);
+        localStorage.setItem("now_email", "");
+        localStorage.setItem("now_phone", "");
+        document.getElementsByName("log")[0].setAttribute("action", "database_product.html");
+      }
+      else {
+        //position index username in array
+        var pos_user = v_user.indexOf(document.forms["log"]["username"].value);
+
+        var phone_now = v_phone[pos_user];
+        var email_now = v_mail[pos_user];
+
+        // if username in array == username from form
+        if (pass_now == v_pass[pos_user]) {
+          localStorage.setItem("now_user", user_now);
+          localStorage.setItem("now_pass", pass_now);
+          localStorage.setItem("now_email", email_now);
+          localStorage.setItem("now_phone", phone_now);
+          document.getElementsByName("log")[0].setAttribute("action", "main.html");
+        }
+        else {
+          if (pos_user == -1) {
+            alert("Username Is Incorrect");
+          }
+          else {
+            alert("Password Is Incorrect");
+
+          }
+        }
+      }
+    }
+  </script>
+
+</head>
+
+
+<body>
+
+  <header>
+    <div class="header">
+      <img src="imgs/logo.svg" alt="Logo was here" class="logo" width="300px">
+      <div class="menubtn">
+        <img src="imgs/menubtn.svg" class="menubtnimg menubtn" alt="Menu Button" width="70px" height="70px" />
+        <br>
+        <nav>
+          <div class="allmenu"><br>
+            <a href="Home.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="main.html">Offers</a><br>
+            <a href="contact_us.html">Contact Us</a><br> <br>
+          </div>
+        </nav>
+      </div> <a href="login.html"><img src="imgs/Loginbtn.svg" class="loginbtn" alt="Login Button" width="70px"
+          height="70px" /></a>
+    </div>
+  </header>
+
+  <p id="guard">you have to login so you can proceed to order your food</p>
+  <div class="fform">
+    <p class="p_signin">
+      Sign in
+    </p>
+
+    <form autocomplete="off" name="log" method="POST" onsubmit="f_log()">
+      <input type="text" name="username" required placeholder="Username" autofocus><br>
+      <input type="password" minlength="10" name="password" required placeholder="Password"><br>
+      <input type="submit" value="Login"> <br>
+      <input type="button" value="Create an Account" onClick="location.href='registration.html'"><br>
+      <br>
+      <div class="gif2">
+        <img src="gif/02.gif" alt="">
+      </div>
+    </form>
+  </div>
+  <br>
+  <footer class="footer">
+    <h3>This website is developed by <span id="teamname">Triple Tags</span> team</h3>
+  </footer>
+
+
+
+
+</body>
+
+
+
+</html>
